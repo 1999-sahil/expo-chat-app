@@ -1,12 +1,27 @@
 import { colors } from '@/constants/theme'
-import React from 'react'
+import { useRouter } from 'expo-router'
+import React, { useEffect } from 'react'
 import { StatusBar, StyleSheet, Text, View } from 'react-native'
+import Animated, { FadeInDown } from 'react-native-reanimated'
 
 const SplashScreen = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    setTimeout(() => {
+      router.replace("/(auth)/welcome")
+    }, 1500);
+  }, []);
+
   return (
     <View style={styles.container}>
-      <Text>Splash Screen</Text>
-      <StatusBar barStyle={'light-content'} backgroundColor={colors.neutral500} />
+      <StatusBar barStyle={'light-content'} backgroundColor={colors.neutral950} />
+      <Animated.Image 
+        source={require('../assets/images/welcomeScreen.png')}
+        entering={FadeInDown.duration(700).springify()}
+        style={styles.logo}
+        resizeMode={'contain'}
+      />
     </View>
   )
 }
@@ -18,6 +33,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: colors.neutral900,
+    backgroundColor: colors.neutral950,
+  },
+  logo: {
+    height: "16%",
+    aspectRatio: 1,
   },
 });

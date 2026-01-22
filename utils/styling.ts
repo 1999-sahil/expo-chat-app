@@ -8,7 +8,7 @@ const guidelineBaseWidth = 375;
 const guidelineBaseHeight = 812;
 
 export const scale = (size: number) => {
-    Math.round(
+    return Math.round(
         PixelRatio.roundToNearestPixel(
             (shortDimension / guidelineBaseWidth) * (size as number)
         )
@@ -16,7 +16,7 @@ export const scale = (size: number) => {
 };
 
 export const verticalScale = (size: number) => {
-    Math.round(
+    return Math.round(
         PixelRatio.roundToNearestPixel(
             (longDimension / guidelineBaseHeight) * (size as number)
         )

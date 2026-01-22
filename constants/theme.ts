@@ -3,7 +3,7 @@ import { scale, verticalScale } from "@/utils/styling";
 export const colors = {
   primary: "#facc15",
   primaryLight: "#fef08a",
-  primaryDark: "#eab308",
+  primaryDark: "#BADFDC",
   text: "#292524",
   white: "#fff",
   black: "#000",
@@ -22,6 +22,7 @@ export const colors = {
   neutral700: "#44403c",
   neutral800: "#292524",
   neutral900: "#1c1917",
+  neutral950: "#060606"
 };
 
 export const spacingX = {
